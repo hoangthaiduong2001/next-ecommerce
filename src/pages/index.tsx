@@ -1,7 +1,11 @@
 'use client'
 import Head from 'next/head'
+import { useState } from 'react'
+import CommonTextField from 'src/components/text-filed'
 
 export default function Home() {
+  const [text, setText] = useState<string>('')
+
   return (
     <>
       <Head>
@@ -11,6 +15,7 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <h1>Hello world!</h1>
+      <CommonTextField value={text} onChange={setText} inputType='password' />
     </>
   )
 }

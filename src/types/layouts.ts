@@ -23,6 +23,8 @@ export type VerticalNavToggle = 'accordion' | 'collapse'
 
 export type HorizontalMenuToggle = 'hover' | 'click'
 
+export type TSize = 'medium' | 'small'
+
 export type BlankLayoutProps = {
   children: ReactNode
 }
