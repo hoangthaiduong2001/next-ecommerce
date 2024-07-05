@@ -13,6 +13,7 @@ export type OwnerStateThemeType = {
 import MuiCard from './card'
 import MuiChip from './chip'
 import MuiLink from './link'
+import MuiStack from './stack'
 import MuiList from './list'
 import MuiMenu from './menu'
 import MuiTabs from './tabs'
@@ -56,6 +57,7 @@ const Overrides = (settings: Settings) => {
   const chip = MuiChip()
   const list = MuiList()
   const menu = MuiMenu()
+  const stack = MuiStack()
   const tabs = MuiTabs()
   const radio = MuiRadio()
   const input = MuiInput()
@@ -89,6 +91,7 @@ const Overrides = (settings: Settings) => {
     chip,
     list,
     menu,
+    stack,
     tabs,
     cards,
     radio,

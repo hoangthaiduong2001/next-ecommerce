@@ -1,13 +1,17 @@
 import { styled, TextField, TextFieldProps } from '@mui/material'
 
 export const TextFieldWrapper = styled(TextField)<TextFieldProps>(({ theme }) => ({
+  '& .MuiInputLabel-root': {
+    transform: 'none',
+    position: 'relative'
+  },
+
   '& .MuiOutlinedInput-notchedOutline': {
-    border: `1px solid ${theme.palette.action}`
+    borderRadius: theme.spacing(1)
   },
 
   '& > :not(.Mui-disabled)': {
-    borderRadius: theme.spacing(1),
-    background: theme.palette.background,
+    background: theme.palette.secondary,
 
     '&.Mui-focused': {
       '& .MuiOutlinedInput-notchedOutline': {
