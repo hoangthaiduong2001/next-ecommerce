@@ -1,4 +1,3 @@
-import { TextFieldProps } from '@mui/material'
 import { TSize } from 'src/types/layouts'
 
 type TInputType = 'password' | 'text'
@@ -15,8 +14,10 @@ export interface CTextFieldProps {
   variant?: TVariant
   label?: string
   defaultValue?: string
+  required?: boolean
   placeholder?: string
   maxLength?: number
   value: string
+  endAdornmentChildren?: React.ReactNode
   onChange?: (value: string) => void
 }
