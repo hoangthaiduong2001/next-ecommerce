@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { Box, InputAdornment, Typography } from '@mui/material'
 
 import { TextFieldWrapper } from './styled'
@@ -27,7 +25,7 @@ const CommonTextField = ({
     <Box width={width}>
       <TextFieldWrapper
         {...rest}
-        InputLabelProps={{ shrink: false }}
+        InputLabelProps={{ shrink: true }}
         size={size}
         label={label}
         fullWidth
