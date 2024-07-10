@@ -64,6 +64,7 @@ const RegisterPage: NextPage<TProps> = () => {
                   label='Email'
                   maxLength={25}
                   errorMessage={error?.message}
+                  placeholder='Input email'
                 />
               )}
             />
@@ -84,6 +85,7 @@ const RegisterPage: NextPage<TProps> = () => {
                   }
                   maxLength={25}
                   errorMessage={error?.message}
+                  placeholder='Input password'
                 />
               )}
             />
@@ -104,6 +106,7 @@ const RegisterPage: NextPage<TProps> = () => {
                   }
                   maxLength={25}
                   errorMessage={error?.message}
+                  placeholder='Input confirm password'
                 />
               )}
             />

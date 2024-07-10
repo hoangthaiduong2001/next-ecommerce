@@ -63,6 +63,7 @@ const LoginPage: NextPage<TProps> = () => {
                   label='Email'
                   maxLength={25}
                   errorMessage={error?.message}
+                  placeholder='Input email'
                 />
               )}
             />
@@ -83,6 +84,7 @@ const LoginPage: NextPage<TProps> = () => {
                   }
                   maxLength={25}
                   errorMessage={error?.message}
+                  placeholder='Input password'
                 />
               )}
             />
