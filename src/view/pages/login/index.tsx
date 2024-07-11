@@ -12,6 +12,7 @@ import { FaFacebook } from 'react-icons/fa'
 import { IoLogoGoogle } from 'react-icons/io'
 import { MdOutlineVisibility, MdOutlineVisibilityOff } from 'react-icons/md'
 import CommonTextField from 'src/components/text-filed'
+import { useAuth } from 'src/hooks/useAuth'
 import { initialValueLogin } from './const'
 import { LoginSchemaType, loginSchema } from './schema'
 import ImageLoginDark from '/public/images/login-dark.png'
@@ -24,12 +25,21 @@ const LoginPage: NextPage<TProps> = () => {
 
   const [isShowPassword, setIsShowPassword] = useState<boolean>(false)
 
-  const { control, handleSubmit } = useForm({
+  const { login } = useAuth()
+
+  const {
+    control,
+    handleSubmit,
+    formState: { errors }
+  } = useForm({
     defaultValues: initialValueLogin,
     resolver: yupResolver<LoginSchemaType>(loginSchema)
   })
   const onSubmit = (data: LoginSchemaType) => {
-    console.log('data', data)
+    if (!Object.keys(errors).length) {
+      login({ ...data, rememberMe: true })
+      console.log('data', data)
+    }
   }
 
   return (
@@ -89,15 +99,15 @@ const LoginPage: NextPage<TProps> = () => {
               )}
             />
           </Stack>
-          <Button type='submit' fullWidth variant='contained' sx={{ mt: 3, mb: 2 }}>
-            Sign In
-          </Button>
           <Stack justifyContent='space-between' alignItems='center'>
             <FormControlLabel control={<Checkbox value='remember' color='primary' />} label='Remember me' />
             <Typography variant='body2'>
               <Link href='#'>Forgot password?</Link>
             </Typography>
           </Stack>
+          <Button type='submit' fullWidth variant='contained' sx={{ mt: 3, mb: 2 }}>
+            Sign In
+          </Button>
           <Stack justifyContent='center' alignItems='center' direction='column' gap={2}>
             <Typography variant='body2'>
               Don't have an account?

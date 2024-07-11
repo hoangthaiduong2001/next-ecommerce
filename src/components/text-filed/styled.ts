@@ -6,11 +6,10 @@ export const TextFieldWrapper = styled(TextField)<TextFieldProps>(({ theme }) =>
     fontWeight: '400'
   },
 
-  '& .MuiInputLabel-root': {
+  '& .MuiInputLabel-root.MuiInputLabel-shrink': {
     transform: 'none',
     position: 'relative',
-    width: '100%',
-    paddingBottom: theme.spacing(2),
+    marginBottom: theme.spacing(2),
     fontSize: '16px'
   },
 
